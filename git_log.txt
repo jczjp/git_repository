@@ -1,0 +1,147 @@
+Administrator@ZJP MINGW64 /d/GIT
+$ git config --global user.name "zhaojunpeng"
+
+Administrator@ZJP MINGW64 /d/GIT
+$ git config --global user.email "zjp_328@163.com"
+
+Administrator@ZJP MINGW64 /d/GIT
+$ mkdir git_repository
+
+Administrator@ZJP MINGW64 /d/GIT
+$ cd git_repository
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository
+$ pwd
+/d/GIT/git_repository
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository
+$ git init
+Initialized empty Git repository in D:/GIT/git_repository/.git/
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ ls -ah
+./  ../  .git/
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git add user_info_brake.txt
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git commit -m "测试GIT，保存用户名及密码相关信息。"
+[master (root-commit) 38a2b2b] 测试GIT，保存用户名及密码相关信息。
+ 1 file changed, 14 insertions(+)
+ create mode 100644 user_info_brake.txt
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git add user_info_brake.txt
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git commit -m "修改版本1"
+[master c024a4c] 修改版本1
+ 1 file changed, 3 insertions(+)
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git add user_info_brake.txt
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git commit -m "修改版本2"
+[master 53a4856] 修改版本2
+ 1 file changed, 5 insertions(+)
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git log
+commit 53a485634b983b4889dc6edbeb75cd7b78057177
+Author: zhaojunpeng <zjp_328@163.com>
+Date:   Tue Oct 29 22:42:31 2019 +0800
+
+    修改版本2
+
+commit c024a4c683697ac5cec4b49eaacbf7a9c5d76c9f
+Author: zhaojunpeng <zjp_328@163.com>
+Date:   Tue Oct 29 22:41:59 2019 +0800
+
+    修改版本1
+
+commit 38a2b2be614e17c3591985c780d95001de90832a
+Author: zhaojunpeng <zjp_328@163.com>
+Date:   Tue Oct 29 22:35:28 2019 +0800
+
+    测试GIT，保存用户名及密码相关信息。
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$
+
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git log --pretty=oneline
+53a485634b983b4889dc6edbeb75cd7b78057177 修改版本2
+c024a4c683697ac5cec4b49eaacbf7a9c5d76c9f 修改版本1
+38a2b2be614e17c3591985c780d95001de90832a 测试GIT，保存用户名及密码相关信息。
+
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git reset --hard HEAD^^
+HEAD is now at 38a2b2b 测试GIT，保存用户名及密码相关信息。
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git log
+commit 38a2b2be614e17c3591985c780d95001de90832a
+Author: zhaojunpeng <zjp_328@163.com>
+Date:   Tue Oct 29 22:35:28 2019 +0800
+
+    测试GIT，保存用户名及密码相关信息。
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git reset --hard ^C
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git reset --hard c024a4c
+HEAD is now at c024a4c 修改版本1
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git reflog
+c024a4c HEAD@{0}: reset: moving to c024a4c
+38a2b2b HEAD@{1}: reset: moving to HEAD^^
+53a4856 HEAD@{2}: commit: 修改版本2
+c024a4c HEAD@{3}: commit: 修改版本1
+38a2b2b HEAD@{4}: commit (initial): 测试GIT，保存用户名及密码相关信息。
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ ^C
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git remote add origin git@github.com:git@github.com:
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git remote add origin https://github.com/jczjp/git_repository.git
+fatal: remote origin already exists.
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ ^C
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git remote rm origin
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git remote add origin https://github.com/jczjp/git_repository.git
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$ git push -u origin master
+Username for 'https://github.com': jczjp
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 656 bytes | 0 bytes/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/jczjp/git_repository.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+
+Administrator@ZJP MINGW64 /d/GIT/git_repository (master)
+$

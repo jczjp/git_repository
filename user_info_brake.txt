@@ -13,5 +13,15 @@ zjp123456789
 密码：mg123456
 
 
-版本1
+Github
+	username : jczjp
+	psw : zjp19890328
+	
+	git -username :zhaojunpeng
+	git -email :zjp_328@163.com
+	git -psw :mt123
+	
+	
+	
+	
 
